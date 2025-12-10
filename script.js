@@ -129,10 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const heartContainer = document.getElementById('hearts-bg');
         const heartSymbols = ['❤️', '💖', '🌸', '✨', '🎀'];
         const photoUrls = [
-            'images/bg1.jpg',
-            'images/bg2.jpg',
-            'images/bg4.png'
-            // 'images/bg3.png' // Commented out. Uncomment to bring it back!
+            'bg1.jpg',
+            'bg2.jpg',
+            'bg4.png'
+            // 'bg3.png' // Commented out.
         ];
 
         const count = 25;
