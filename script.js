@@ -6,12 +6,13 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('youtube-player', {
         height: '0',
         width: '0',
-        videoId: 'XbvxeyyzXDo', // The requested song
+        videoId: 'zBG8Ica6U3Y', // New Song
         playerVars: {
             'playsinline': 1,
             'controls': 0,
             'loop': 1,
-            'playlist': 'XbvxeyyzXDo' // Required for loop to work
+            'playlist': 'zBG8Ica6U3Y',
+            'start': 62 // Start at 62 seconds
         },
         events: {
             'onReady': onPlayerReady
@@ -20,8 +21,6 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-    // Player is ready, but we wait for user interaction to play
-    // set volume to max
     event.target.setVolume(100);
 }
 
@@ -52,9 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkDate() {
         const input = dateInput.value.trim();
         if (input === CORRECT_DATE) {
-            // Success
+            // Success - Hide overlay
             verifyOverlay.classList.add('hidden');
-            // Try playing music immediately after user interaction
+
+            // Play Music
             if (player && typeof player.playVideo === 'function') {
                 player.playVideo();
                 isMusicPlaying = true;
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // 5. Handle Gift Box Click and Music
+    // 5. Handle Gift Box Click
     const giftContainer = document.getElementById('gift-container');
     const messageCard = document.getElementById('message-card');
     const musicBtn = document.getElementById('music-toggle');
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
     giftContainer.addEventListener('click', () => {
         if (!giftContainer.classList.contains('open')) {
             openGift();
-            playMusic();
         }
     });
 
+    // Music Control
     musicBtn.addEventListener('click', () => {
         if (player && typeof player.getPlayerState === 'function') {
             const state = player.getPlayerState();
@@ -100,14 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    function playMusic() {
-        if (player && typeof player.playVideo === 'function') {
-            player.playVideo();
-            musicBtn.classList.remove('hidden');
-            musicBtn.innerText = '🎵';
-        }
-    }
 
     function openGift() {
         // Animate the Box
