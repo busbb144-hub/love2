@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1 Month Anniversary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Sarabun:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Floating Hearts Background (kept on top of images) -->
+        <div class="hearts-bg" id="hearts-bg"></div>
+
+        <!-- Verification Overlay (Date Check) -->
+        <div class="verification-overlay" id="verification-overlay">
+            <div class="verification-box">
+                <h2>วันครบรอบของเราคือวันไหน? 📅</h2>
+                <p>ใส่วันที่เติมแค่ตัวเลขนะ (เช่น 081268)</p>
+                <input type="text" id="date-input" placeholder="ddmmyy" maxlength="6">
+                <button id="verify-btn">ตกลง</button>
+                <p id="error-msg" class="error-msg hidden">วันที่ผิด! จำไม่ได้เหรอ? 😤</p>
+            </div>
+        </div>
+
+        <!-- YouTube Player (Hidden) -->
+        <div id="youtube-player" style="display: none;"></div>
+
+        <!-- Mute/Unmute Control (Optional, good for UX) -->
+        <button id="music-toggle" class="music-btn hidden">🎵</button>
+
+        <!-- Introductory Text -->
+        <h1 class="title animate-pop">ครบรอบ 1 เดือนแล้วนะ! <span class="heart-icon">❤️</span></h1>
+
+        <!-- Gift Box Container -->
+        <div class="gift-container" id="gift-container">
+            <div class="gift-box" id="gift-box">
+                <div class="lid">
+                    <div class="ribbon-horizontal"></div>
+                    <div class="ribbon-vertical"></div>
+                </div>
+                <div class="box-body">
+                    <div class="ribbon-horizontal"></div>
+                    <div class="ribbon-vertical"></div>
+                </div>
+            </div>
+            <p class="click-hint">กดที่กล่องเพื่อเปิดของขวัญ</p>
+        </div>
+
+        <!-- Hidden Message Card -->
+        <div class="message-card hidden" id="message-card">
+            <div class="card-content">
+                <h2>ถึง... คนดีของเค้า 💖</h2>
+                <div class="text-content">
+                    <p>1 เดือนแล้วนะเธอ ขอบคุณที่ยังอยู่ด้วยกันนะ</p>
+                    <p>เค้ารักเธอนะ ถึงแม้จะไม่ได้อยู่ใกล้กัน</p>
+                    <p>แต่เค้ารักเธอมากๆ นะ</p>
+                    <p>เค้าสัญญาจะไม่นอกใจ และจะไม่มีเรื่องผู้หญิงคนอื่น</p>
+                    <p>ขอบคุณนะที่ไม่หายไปไหน</p>
+                    <p class="highlight">รักมากๆ นะ ❤️</p>
+                </div>
+                <button class="close-btn" onclick="location.reload()">รักที่สุด (อ่านอีกรอบ)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
